@@ -1,0 +1,14 @@
+[Unit]
+Description=Weather Monitoring
+After=network.target
+
+[Service]
+ExecStart=/home/pi/go/src/github.com/hyzhak/monitoring-rpi-go/main --listen-address :8080
+WorkingDirectory=/home/pi/go/src/github.com/hyzhak/monitoring-rpi-go/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
